@@ -122,25 +122,26 @@ function generateCart() {
         }
     }
     console.log(cart)
+    printCart()
 }
 
 // Exercise 5
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
 
+    cart = cart.map(v => ({ ...v, subtotalWithDiscount: 0 }))
+
     for (x = 0; x < cart.length; x++) {
         if (cart[x].name === 'cooking oil' && cart[x].quantity >= 3) {
-            subtotalWithDiscount = 10
-            cart[x].price = subtotalWithDiscount * cart[x].quantity
-            console.log(cart[x].price)
+            cart[x].subtotalWithDiscount = 10
+            console.log(cart[x].subtotalWithDiscount)
         }
     }
 
     for (x = 0; x < cart.length; x++) {
         if (cart[x].name === 'Instant cupcake mixture' && cart[x].quantity >= 10) {
-            subtotalWithDiscount = ((cart[x].price) * 2) / 3
-            cart[x].price = subtotalWithDiscount * cart[x].quantity
-            console.log(cart[x].price)
+            cart[x].subtotalWithDiscount = ((cart[x].price) * 2) / 3
+            console.log(cart[x].subtotalWithDiscount)
         }
     }
 }
