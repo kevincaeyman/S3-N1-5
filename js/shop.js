@@ -125,6 +125,12 @@ function generateCart() {
 // Exercise 5
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
+    const oliveOilIndex = cart.findIndex((item) => item.name=="cooking oil") //We're searching for the id of the item "cooking oil" in the array
+
+    if(cart[oliveOilIndex].quantity >= 3){ //If the item quantity is equal to or higher than 3 
+        cart[oliveOilIndex].price = 10; // Its price changes to 10
+    }
+    console.log(cart[oliveOilIndex].price)
 }
 
 // Exercise 6
